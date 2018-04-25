@@ -3,6 +3,9 @@
  */
 package com.backend.apitest.controller;
 
+
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.backend.restbackend.user.model.LoginResponse;
-import com.backend.restbackend.user.dto.User;
 import com.backend.restbackend.dao.LoginDAO;
+import com.backend.restbackend.user.dto.DateManagement;
+import com.backend.restbackend.user.dto.EventManagement;
+import com.backend.restbackend.user.dto.User;
+import com.backend.restbackend.user.model.BlockDateRequest;
+import com.backend.restbackend.user.model.LoginResponse;
 
 
 /**
@@ -66,6 +72,48 @@ public class LoginController {
 			return null;
 		}
 	}
+	/*
+	 * Using date , block the particular date of calendar 
+	 * **/
+	
+	
+	@RequestMapping(value = "/user/event/management", method = RequestMethod.POST)
+	public @ResponseBody EventManagement eventSP(@RequestBody EventManagement eventManagement) {
+		
+		logger.info("Event management using claender in eventSP() in LoginController");
+		
+		List<String> blockDate = eventManagement.getBlock_Date();
+		System.out.println(blockDate);
+		
+		loginDAO.insertDate(eventManagement);
+		
+		return eventManagement;
+	
+	}
+	
+/**
+ * Showing all the block date using sp_ID 
+ * 
+ */
+	@RequestMapping(value = "/user/event/block/date", method = RequestMethod.POST)
+	public @ResponseBody List<DateManagement> spBlockDate(@RequestBody BlockDateRequest blockDateRequest) {
+	
+		logger.info("Event management using claender in spBlockDate() in LoginController");
+		
+		List<DateManagement> listOfBlockDate = loginDAO.spAllBlockDate(blockDateRequest);
+		
+		return listOfBlockDate;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping(value = "/student", method = RequestMethod.POST)

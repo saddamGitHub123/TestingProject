@@ -14,7 +14,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.backend.restbackend.dao.LoginDAO;
+import com.backend.restbackend.user.dto.DateManagement;
+import com.backend.restbackend.user.dto.EventManagement;
 import com.backend.restbackend.user.dto.User;
+import com.backend.restbackend.user.model.BlockDateRequest;
 
 
 
@@ -70,6 +73,70 @@ public class LoginDAOImpl implements LoginDAO {
 			/*
 			 * if (sessionFactory != null) { sessionFactory.close(); }
 			 */
+		}
+	}
+
+	@Override
+	public boolean insertDate(EventManagement eventManagement) {
+		// TODO Auto-generated method stub
+		DateManagement eventManagements =null;
+		try {
+			
+			for(int i=0 ; i< eventManagement.getBlock_Date().size();i++) 
+			{
+				//eventManagements.setSP_ID("SP_001");
+				//eventManagements.setUser_ID(eventManagement.getUser_ID());
+				String SP_ID = "SP_001";
+				//String datee =eventManagement.getBlock_Date().get(i);
+				//String msg = eventManagement.getMessage();
+				//String user_ID = eventManagement.getUser_ID();
+				
+				eventManagements = new DateManagement(SP_ID,eventManagement.getUser_ID(),eventManagement.getBlock_Date().get(i),
+						eventManagement.getMessage());
+				       
+		             sessionFactory.getCurrentSession().persist(eventManagements);
+		             
+		     }
+			
+			//sessionFactory.openSession().flush();
+			sessionFactory.openSession().beginTransaction().commit();
+		return true;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	
+	
+	/*
+	 * Getting all block date list using SP_ID
+	 * */
+	@Override
+	public List<DateManagement> spAllBlockDate(BlockDateRequest blockDateRequest) {
+		// TODO Auto-generated method stub
+		String SP_ID = blockDateRequest.getSP_ID();
+		String Starting_Date = blockDateRequest.getStarting_Date();
+		String Ending_Date = blockDateRequest.getEnding_Date();
+		try {
+         String showingAllBlockDate = "FROM DateManagement As d where d.Block_Date between :Starting_Date AND :Ending_Date AND SP_ID = :SP_ID";
+         
+         List<DateManagement> list= sessionFactory
+					.getCurrentSession()
+					.createQuery(showingAllBlockDate, DateManagement.class)
+						.setParameter("SP_ID", SP_ID)
+						.setParameter("Starting_Date", Starting_Date)
+						.setParameter("Ending_Date", Ending_Date)
+							.getResultList();
+         
+         System.out.println("list size is"+list.size());
+         System.out.println("list size is"+list);
+         
+		return list;
+		}catch (RuntimeException re)
+		{
+			log.error("get failed", re);
+			throw re;
 		}
 	}
 
