@@ -58,6 +58,26 @@ public class PageController {
 		return mv;
 	}
 	
+	@RequestMapping(value = {"/mens.html" })
+	public ModelAndView MensCollection() {
+		logger.info("This is the PageController ");
+
+	//	ModelAndView mv = new ModelAndView("page");
+		ModelAndView mv = new ModelAndView("mens");
+		//mv.addObject("greeting", "      Welcome to Spring And Hibernate World ");
+		return mv;
+	}
+	
+	@RequestMapping(value = {"/about.html" })
+	public ModelAndView About() {
+		logger.info("This is the PageController ");
+
+	//	ModelAndView mv = new ModelAndView("page");
+		ModelAndView mv = new ModelAndView("about");
+		//mv.addObject("greeting", "      Welcome to Spring And Hibernate World ");
+		return mv;
+	}
+	
 //	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 //	public ModelAndView welcomePage() {
 //
