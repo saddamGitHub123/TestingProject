@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header-bot -->
 
 <!-- navigation bar with bannaer -->
-<%@include file="./shared/navigation.jsp" %>
+<%@include file="./navigationpage/womensNavigation.jsp" %>
 <!-- //banner-top -->
 
 <!-- Modal1 -->
