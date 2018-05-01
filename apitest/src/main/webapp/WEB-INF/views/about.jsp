@@ -121,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="social-icons team-icons right-w3l fotw33">
 							<div class="caption">
 								<h4>Sk Saddam Hosan</h4>
-								<p>CEO & Founder Of Elity Shoppy</p>						
+								<p>CEO & Founder Of E-Shoppy Pvt. Ltd</p>						
 							</div>
 								<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 															<li><a href="#" class="facebook">
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			         	</div>
 						<div class="col-md-3 team-grids">
 						<div class="thumbnail team-w3agile">
-							<img src="<c:url value="/resources/img/t2.jpg" />" class="img-responsive" alt="">
+							<img src="<c:url value="/resources/img/t4.jpg" />" class="img-responsive" alt="">
 							<div class="social-icons team-icons right-w3l fotw33">
 							<div class="caption">
 								<h4>Ujjal</h4>
@@ -167,7 +167,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			         	</div>
 						<div class="col-md-3 team-grids">
 						<div class="thumbnail team-w3agile">
-							<img src="<c:url value="/resources/img/t3.jpg" />" class="img-responsive" alt="">
+							<img src="<c:url value="/resources/img/t4.jpg" />" class="img-responsive" alt="">
 							<div class="social-icons team-icons right-w3l fotw33">
 							<div class="caption">
 								<h4>Prodipta</h4>

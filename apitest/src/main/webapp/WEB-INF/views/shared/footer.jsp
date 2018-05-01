@@ -101,6 +101,6 @@
 
 		<div class="clearfix"></div>
 	</div>
-		<p class="copy-right">&copy 2018 E-Shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">E-Shoppy Ltd.</a></p>
+		<p class="copy-right">&copy 2018 E-Shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">E-Shoppy Pvt. Ltd.</a></p>
 	</div>
 </div>
