@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Elite Shoppy an Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template |Men's :: w3layouts</title>
+<title>E-Shoppy - Bigest Online Shopping Sit</title>
 <!--/tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,8 +13,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//tags -->
-<link href="<c:url value="/resources/css/bootstrap.css " />" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/jquery-ui.css"/>" >
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" type="text/css" media="all" />
 <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet"> 
 <!-- //for bootstrap working -->
@@ -23,56 +23,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- header -->
-<div class="header" id="home">
-	<div class="container">
-		<ul>
-		    <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
-			<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
-			<li><i class="fa fa-phone" aria-hidden="true"></i> Call : 7204414827</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
-		</ul>
-	</div>
-</div>
+
+ <%@include file="./shared/header.jsp" %>
+
 <!-- //header -->
+
+
 <!-- header-bot -->
-<div class="header-bot">
-	<div class="header-bot_inner_wthreeinfo_header_mid">
-		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<!-- header-bot -->
-			<div class="col-md-4 logo_agile">
-				<h1><a href="e_home"><span>E</span>lite Shoppy <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
-			</div>
-        <!-- header-bot -->
-		<div class="col-md-4 agileits-social top_content">
-						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						                                   <li class="share">Share On : </li>
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter"> 
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
 
+<%@include file="./shared/headerBot.jsp" %>
 
-
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
 <!-- //header-bot -->
+<!-- //header-bot -->
+
 <!-- banner -->
 <div class="ban-top">
 	<div class="container">
@@ -478,15 +441,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="men-wear-bottom">
 				<div class="col-sm-4 men-wear-left">
-					<img class="img-responsive" src="<c:url value="/resources/img/bb2.jpg" />" alt=" " />
+					<img class="img-responsive" src="<c:url value="/resources/img/bb2.jpg" />"  alt=" " />
 				</div>
 				<div class="col-sm-8 men-wear-right">
 					<h4>Exclusive Men's <span>Collections</span></h4>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-					accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae 
-					ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-					explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-					odit aut fugit. </p>
+					<p>Discover men's fashion exclusives with E-Shoppy. 
+					Choose from limited editions of men's t-shirts,
+					 shoes and jackets. Shop exclusive collection at E-Shoppy today. </p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -616,7 +577,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-3 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
-										<img src="<c:url value="/resources/img/m1.jpg" />"  alt="" class="pro-image-front">
+										<img src="<c:url value="/resources/img/m1.jpg" />" alt="" class="pro-image-front">
 										<img src="<c:url value="/resources/img/m1.jpg" />" alt="" class="pro-image-back">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
@@ -656,7 +617,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
 										<img src="<c:url value="/resources/img/m2.jpg" />" alt="" class="pro-image-front">
-										<img src="<c:url value="/resources/img/m2.jpg" />" alt="" class="pro-image-back">
+										<img src="<c:url value="/resources/img/m2.jpg"  />" alt="" class="pro-image-back">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -733,7 +694,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-3 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
-										<img src="<c:url value="/resources/img/m4.jpg" />" alt="" class="pro-image-front">
+										<img src="<c:url value="/resources/img/m4.jpg"/>" alt="" class="pro-image-front">
 										<img src="<c:url value="/resources/img/m4.jpg" />" alt="" class="pro-image-back">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
@@ -889,7 +850,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="col-md-3 product-men">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
-										<img src="<c:url value="/resources/img/m8.jpg" />" alt="" class="pro-image-front">
+										<img src="<c:url value="/resources/img/m8.jpg"/>" alt="" class="pro-image-front">
 										<img src="<c:url value="/resources/img/m8.jpg" />" alt="" class="pro-image-back">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
@@ -940,7 +901,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>FREE SHIPPING</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
+						<p>Order with Free Shipping by E-Shoppy. </p>
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
@@ -949,7 +910,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>24/7 SUPPORT</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
+						<p>E-Shoppy provide support via phone, email and chat 24/7</p>
 					</div>
 				</div>
 				<div class="col-md-3 w3layouts_mail_grid_left">
@@ -958,7 +919,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>MONEY BACK GUARANTEE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
+						<p>we will give your money back if 
+						 you do not like any product</p>
 					</div>
 				</div>
 					<div class="col-md-3 w3layouts_mail_grid_left">
@@ -967,7 +929,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="w3layouts_mail_grid_left2">
 						<h3>FREE GIFT COUPONS</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
+						<p>Earn enough points and you can get free Amazon gift card codes.</p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -980,10 +942,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
 	<div class="footer_agile_inner_info_w3l">
 		<div class="col-md-3 footer-left">
-			<h2><a href="e_home"><span>E</span>lite Shoppy </a></h2>
-			<p>Lorem ipsum quia dolor
-			sit amet, consectetur, adipisci velit, sed quia non 
-			numquam eius modi tempora.</p>
+			<h2><a href="e_home"><span>E</span>-Shoppy </a></h2>
+			<p>Clothes, electronics, accessories - whatever your need for the hour maybe, E-Shoppy,
+			 your favorite online shopping site, is sure to spoil you with a wide range of products. </p>
 			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
@@ -1004,7 +965,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 sign-gd">
 					<h4>Our <span>Information</span> </h4>
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="e_home">Home</a></li>
 						<li><a href="mens.html">Men's Wear</a></li>
 						<li><a href="womens.html">Women's wear</a></li>
 						<li><a href="about.html">About</a></li>
@@ -1022,7 +983,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="w3-address-right">
 								<h6>Phone Number</h6>
-								<p>+917204414827</p>
+								<p>+91 7204414827</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -1032,7 +993,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="w3-address-right">
 								<h6>Email Address</h6>
-								<p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+								<p>Email :<a href="mailto:example@email.com"> mail@eshoppy.com</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -1042,7 +1003,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="w3-address-right">
 								<h6>Location</h6>
-								<p>Marathallahi , bangalore 560037, India 
+								<p>Bangalore 560037,India 
 								
 								</p>
 							</div>
@@ -1054,10 +1015,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4>Flickr <span>Posts</span></h4>
 					<ul>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/saddam.jpg" />" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="<c:url value="/resources/img/t2.jpg" />"  alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="<c:url value="/resources/img/t2.jpg" />" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/t3.jpg" />" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/t4.jpg" />" alt=" " class="img-responsive" /></a></li>
-						<li><a href="single.html"><img src="<c:url value="/resources/img/t1.jpg"  />" alt=" " class="img-responsive" /></a></li>
+						<li><a href="single.html"><img src="<c:url value="/resources/img/saddam.jpg" />" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/t2.jpg" />" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/t3.jpg" />" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="<c:url value="/resources/img/t2.jpg" />" alt=" " class="img-responsive" /></a></li>
@@ -1081,7 +1042,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<div class="clearfix"></div>
 	</div>
-		<p class="copy-right">&copy 2017 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<p class="copy-right">&copy 2017 E-Shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">E-Shoppy Pvt. Ltd.</a></p>
 	</div>
 </div>
 <!-- //footer -->
@@ -1153,7 +1114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- js -->
 <script type="text/javascript" src="<c:url value="/resources/js/jquery-2.1.4.min.js" />" ></script>
 <!-- //js -->
-<script src="<c:url value="/resources/js/responsiveslides.min.js" />"></script>
+<script src="<c:url value="/resources/js/responsiveslides.min.js" />" ></script>
 				<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
@@ -1173,7 +1134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 						});
 				</script>
-<script src="<c:url value="/resources/js/modernizr.custom.js" />"></script>
+<script src="<c:url value="/resources/js/modernizr.custom.js" />" ></script>
 	<!-- Custom-JavaScript-File-Links --> 
 	<!-- cart-js -->
 	<script src="<c:url value="/resources/js/minicart.min.js" />" ></script>
@@ -1208,7 +1169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui.js" />" ></script>
 					 <!---->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="<c:url value="/resources/js/move-top.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/move-top.js" />" ></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.easing.min.js" />" ></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -1237,6 +1198,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //here ends scrolling icon -->
 
 <!-- for bootstrap working -->
-<script type="text/javascript" src="<c:url value="/resources/js/bootstrap.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/bootstrap.js" />" ></script>
 </body>
 </html>
