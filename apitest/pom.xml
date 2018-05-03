@@ -177,6 +177,12 @@
 			<version>1.7.24</version>
 		</dependency>
 		
+		<!-- push notification to firebase -->
+		<dependency>
+			<groupId>com.ganyo</groupId>
+			<artifactId>gcm-server</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
 		  </dependencies>
   <build>
