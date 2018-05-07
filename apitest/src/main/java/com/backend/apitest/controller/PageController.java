@@ -22,12 +22,15 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.backend.restbackend.dao.PageDAO;
+import com.backend.restbackend.page.dto.AppToken;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
@@ -346,6 +349,57 @@ public class PageController {
 
 		return new ResponseEntity<>("Push Notification ERROR!", HttpStatus.BAD_REQUEST);
 	}
+	
+	
+	
+	/**
+	 * Generate the authentication token 
+	 * 
+	 * */
+	@RequestMapping(value = "/saveToken" , method = RequestMethod.GET)
+	public @ResponseBody AppToken SaveToken()
+	{
+		
+		logger.info("Enterring the SaveToken methond -- in PageContrller ");
+		AppToken appTokn =  pageDAO.CreateTokenAndSave();
+		
+//		if() {
+//			
+//		}
+		return appTokn;
+		
+	}
+	
+	
+	/**
+	 * fatching the authentication token usign toekn from the app 
+	 * **/
+	
+	
+	@RequestMapping(value = "/validTokenSearch", method = RequestMethod.POST)
+	public @ResponseBody AppToken validationForAppToken(@RequestBody AppToken appToken) {
+		
+		
+		AppToken validToken =  pageDAO.validateAppToken(appToken);
+		
+		return validToken;
+		
+	}
+	
+	/*
+	 * Getting random one token from database using 
+	 * **/
+	
+	@RequestMapping(value = "/random/tokenValue", method = RequestMethod.GET)
+	public @ResponseBody AppToken GettingRandomToken() {
+		
+		
+		AppToken validToken =  pageDAO.randomTokenValue();
+		
+		return validToken;
+		
+	}
+	
 	
 	
 	

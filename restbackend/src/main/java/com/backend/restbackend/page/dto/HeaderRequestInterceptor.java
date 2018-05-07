@@ -1,4 +1,4 @@
-package com.backend.restbackend.daoimpl;
+package com.backend.restbackend.page.dto;
 
 import java.io.IOException;
 

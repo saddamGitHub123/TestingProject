@@ -8,23 +8,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
-	@Autowired
-	public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
-			throws Exception {
-		auth.inMemoryAuthentication().withUser("saddam").password("saddam")
-				.roles("USER", "ADMIN");
-	}
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/login").permitAll()
-				.antMatchers("/", "/*apitest*/**")
-				.access("hasRole('USER')").and()
-				.formLogin();
-	}
+//@Configuration
+//@EnableWebSecurity
+//public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+//
+//	@Autowired
+//	public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
+//			throws Exception {
+//		auth.inMemoryAuthentication().withUser("saddam").password("saddam")
+//				.roles("USER", "ADMIN");
+//	}
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http.authorizeRequests().antMatchers("/login").permitAll()
+//				.antMatchers("/", "/*apitest*/**")
+//				.access("hasRole('USER')").and()
+//				.formLogin();
+//	}
 	
 //	@Autowired
 //	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -45,4 +45,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //		.and().formLogin();
 //		
 //	}
-}
+//}
