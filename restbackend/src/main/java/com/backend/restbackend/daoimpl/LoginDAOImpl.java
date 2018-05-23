@@ -13,11 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.backend.restbackend.common.Encryption;
 import com.backend.restbackend.dao.LoginDAO;
 import com.backend.restbackend.user.dto.DateManagement;
 import com.backend.restbackend.user.dto.EventManagement;
 import com.backend.restbackend.user.dto.User;
+import com.backend.restbackend.user.dto.UserData;
 import com.backend.restbackend.user.model.BlockDateRequest;
+
 
 
 
@@ -133,6 +136,76 @@ public class LoginDAOImpl implements LoginDAO {
          System.out.println("list size is"+list);
          
 		return list;
+		}catch (RuntimeException re)
+		{
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+
+	/**
+	 * this is the loginDAOImple class 
+	 * create method and saving password using encrypted value
+	 * ***/
+	
+	@Override
+	public boolean savingEncriptedPassword(UserData userData) {
+		
+		log.debug("Inserting LoginDAOImpl class of saving password as a Encrypted ");
+		try {
+			//UserData userData1 = new UserData();
+			userData.setPassword(Encryption.encrypt(userData.getPassword()));
+			//System.out.println("encripted password is :" + userData1);
+			sessionFactory.getCurrentSession().persist(userData);
+			return true;
+		}catch (RuntimeException re)
+		{
+			log.error("get failed", re);
+			throw re;
+		}
+
+	}
+
+	@Override
+	public UserData loginIntoDatabase(UserData userData) {
+		log.debug("Inserting LoginDAOImpl class of saving password as a Encrypted ");
+		try {
+			String user =userData.getUserName();
+			String password = (Encryption.encrypt(userData.getPassword()));
+			
+//			String selectLogin = "from UserData where userName=: ? and password=: ? ";
+//			Query query = sessionFactory.getCurrentSession().createQuery(selectLogin);
+//
+//			query.setParameter(0, user);
+//			query.setParameter(1, password);
+			
+			String showingAllBlockDate = "from UserData where userName=:user and password=:password ";
+			
+			List<UserData> list  = sessionFactory.getCurrentSession().createQuery(showingAllBlockDate)
+									.setParameter("user", user)
+									.setParameter("password", password)
+										.getResultList();
+			
+			
+//			String showingAllBlockDate = "from UserData where userName=:user and password=:password ";
+//			
+//			sessionFactory.getCurrentSession().createQuery(
+//					"from User where userName=:user and password=:password")
+//					.setString("user", user).setString("password",password).list();
+			
+		//	List<UserData> list = query.getResultList();
+			
+			//System.out.println(list);
+			
+			if ((list != null) && (list.size() > 0)) {
+				// userFound= true;
+				log.debug("get successful,User Name and Password found");
+				userData = list.get(0);
+				return userData;
+			} else {
+				log.debug("get successful,No User Name and Password found ");
+				return userData;
+			}
 		}catch (RuntimeException re)
 		{
 			log.error("get failed", re);

@@ -5,6 +5,7 @@ import java.util.List;
 import com.backend.restbackend.user.dto.DateManagement;
 import com.backend.restbackend.user.dto.EventManagement;
 import com.backend.restbackend.user.dto.User;
+import com.backend.restbackend.user.dto.UserData;
 import com.backend.restbackend.user.model.BlockDateRequest;
 
 /**
@@ -27,5 +28,19 @@ public interface LoginDAO {
 	boolean insertDate(EventManagement eventManagement);
 	
 	List<DateManagement> spAllBlockDate(BlockDateRequest blockDateRequest);
+	
+	/*
+	 * Testing for saving password  encryption 
+	 * 
+	 * **/
+	
+
+	boolean savingEncriptedPassword(UserData userData);
+	
+	/**
+	 * Testing for login password encryption
+	 * **/
+	
+      UserData loginIntoDatabase(UserData userData);
 
 }

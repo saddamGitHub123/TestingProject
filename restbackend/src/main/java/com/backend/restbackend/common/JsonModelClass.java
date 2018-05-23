@@ -9,5 +9,7 @@ public class JsonModelClass {
 	public interface PublicView {}
 	
 	public interface PublicViewDemo extends PublicView {}
+	
+	public interface LoginJsonResponse{}
 
 }

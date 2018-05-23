@@ -16,7 +16,8 @@ public class AppToken implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1776310176062430250L;
+	private static final long serialVersionUID = 5739261401412629096L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int Token_ID;

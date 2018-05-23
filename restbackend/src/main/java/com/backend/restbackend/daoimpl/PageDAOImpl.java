@@ -109,17 +109,23 @@ public class PageDAOImpl implements PageDAO {
 		
 		log.debug("Enterring the randoTokenValue() -- in pageDAOImp classs ");
 		
+		
+		
 		AppToken appToken  = new AppToken();
 		
 		String selectLogin = "FROM AppToken ORDER BY rand()";
+		
+		
+		
+		
 	//	Query query = sessionFactory.getCurrentSession().createQuery(selectLogin).setMaxResults(1);
 		
 	List<AppToken> list = sessionFactory.getCurrentSession()
 						.createQuery(selectLogin,AppToken.class)
 							.setMaxResults(1)
 								.getResultList();
+	
 
-		
 	if ((list != null) && (list.size() > 0)) {
 		// userFound= true;
 		log.debug("get successful,random token from database");
@@ -132,5 +138,4 @@ public class PageDAOImpl implements PageDAO {
 		
 		//return null;
 	}
-
 }

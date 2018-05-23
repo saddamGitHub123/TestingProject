@@ -403,6 +403,25 @@ public class PageController {
 	
 	
 	
+	/*
+	 * Used Singleton class in Java file 
+	 * **/
+	
+	@RequestMapping(value = "/random/tokenValue1", method = RequestMethod.GET)
+	public @ResponseBody AppToken SingleToneClass() {
+		
+		logger.info("Entering the SingletooneClass() -- from pageContrleer class ");
+		AppToken validToken =  pageDAO.randomTokenValue();
+		
+		
+		
+		return validToken;
+		
+	}
+	
+	
+	
+	
 	
 	
 

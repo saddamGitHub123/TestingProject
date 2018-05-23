@@ -17,12 +17,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.backend.restbackend.common.Encryption;
+import com.backend.restbackend.common.JsonModelClass;
+import com.backend.restbackend.common.SuccResponse;
 import com.backend.restbackend.dao.LoginDAO;
 import com.backend.restbackend.user.dto.DateManagement;
 import com.backend.restbackend.user.dto.EventManagement;
 import com.backend.restbackend.user.dto.User;
+import com.backend.restbackend.user.dto.UserData;
 import com.backend.restbackend.user.model.BlockDateRequest;
 import com.backend.restbackend.user.model.LoginResponse;
+import com.fasterxml.jackson.annotation.JsonView;
 
 
 /**
@@ -160,6 +165,82 @@ public class LoginController {
 		}
 	}
 	
+	
+	/*
+	 * @this is saving encrypted password into databse controller 
+	 * **/
+	
+	@RequestMapping(value = "/password/encryption", method = RequestMethod.POST)
+	public @ResponseBody SuccResponse passwordEncryption(@RequestBody UserData userData) {
+		
+		logger.info("Saving encrypted passwrod method in loginController");
+		try {
+			
+			SuccResponse succResponse = new SuccResponse();
+			
+			if(loginDAO.savingEncriptedPassword(userData)) {
+				succResponse.setStatus_code("200");
+				succResponse.setStatus_message("succssfully password encrypeted and save into database");
+				
+				return succResponse;
+				
+			}
+			else {
+				succResponse.setStatus_code("400");
+				succResponse.setStatus_message(" value is not save into database");
+				return succResponse;
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+	}
+	
+	
 
-
+	/*
+	 * @this is saving encrypted password into databse controller 
+	 * **/
+	//String path = "JsonModelClass.LoginJsonResponse.class" ;
+	@JsonView(JsonModelClass.LoginJsonResponse.class) 
+	@RequestMapping(value = "/password/encryption/login", method = RequestMethod.POST)
+	public @ResponseBody UserData loginAndValidateEncrypetedPassword(@RequestBody UserData userData) {
+		
+		logger.info("Saving encrypted passwrod method in loginController");
+		try {
+			
+			SuccResponse succResponse = new SuccResponse();
+			
+			//userData.setPassword(Encryption.encrypt(userData.getPassword()));
+			UserData loginList = loginDAO.loginIntoDatabase(userData);
+			
+			
+			
+			
+//			if(loginDAO.savingEncriptedPassword(userData)) {
+//				succResponse.setStatus_code("200");
+//				succResponse.setStatus_message("succssfully password encrypeted and save into database");
+//				
+//				return loginList;
+//				
+//			}
+//			else {
+//				succResponse.setStatus_code("400");
+//				succResponse.setStatus_message(" value is not save into database");
+//				return loginList;
+//			}
+			
+			return loginList;
+		}catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+	}
+	
+	
 }
